@@ -1,0 +1,190 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    width: 100%;
+    /* height: 100%; */
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    overflow-y: hidden;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+.left{
+    position:relative;
+    height: 100vh;
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:  url(./images/sign-up.jpg) ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.credits{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 19px;
+    bottom:.5rem;
+    font-weight: bold;
+}
+
+
+
+.right{
+    display: flex;
+    justify-content: center;
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.contents{
+    padding-inline: 20px;
+}
+
+.toparea{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    background:rgb(136, 142, 158,0.5);
+    padding: 20px;
+}
+
+.top p{
+    font-family: customFontBold;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.bottom p{
+    font-family: customFontBold;
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.bottom{
+    padding-top: 10px;
+}
+
+.form-area{
+
+    flex: 2;
+    background:#956f5e;
+}
+.top-of-form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.top-of-form span{
+    font-family: customFontBold;
+    font-size: 1.5rem;
+    color: #000;
+}
+.grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 10px;
+    
+}
+
+.form-item{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+
+}
+
+label {
+    position: relative;
+    font-family: customFontBold;
+    font-size: 1.2rem;
+    color: #000;
+    padding-bottom: 5px;
+}
+
+input {
+    font-family: customFontBold;
+    padding: .8rem 1.3rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgb(224, 224, 224);
+    font-size: 1rem;
+    margin-top: 3px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border: none;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.342);
+    outline: none;
+}
+
+input:invalid:focus {
+    border: 2px solid rgb(255, 69, 100)
+}
+
+input:focus:valid {
+    border: rgb(0, 183, 255) 2px solid;
+}
+
+.error {
+    font-family: customFontBold;
+    font-size: .7rem;
+    color: rgb(255, 69, 100);
+    position: absolute;
+}
+
+button[type='submit'] {
+    padding: .8rem 1.3rem;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    letter-spacing: -1px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.253);
+    background:#7b4231;
+}
+
+button[type='submit']:hover {
+    background: #956f5e;
+    cursor: pointer;
+}
+
+
+.lower-section{
+    flex: 3;
+    font-size: 1.2rem;
+    padding-top: 10px;
+    margin-bottom: .5rem;
+}
+
+.lower-section a{
+    color: #000;
+    font-family: customFontBold;
+    font-size: 1.2rem;
+    text-decoration: underline;
+    font-weight: bold;
+    color:#2c754a;
+  
+}
