@@ -35,59 +35,140 @@
                     <p>Lorem ipsum dolor sit amet.</p>
                 </div>
             </div>
-
             <div class="form-area">
                 <div class="contents">
                     <div class="top-of-form">
                         <span>Let's Do This</span>
                     </div>
 
-                    <form action="POST">
+                    <form action="" method="" id="myForm">
                         <div class="grid">
                             <div class="form-item">
-                                <label for="first-name"> First Name</label>
+                                <label for="first-name">First Name</label>
                                 <input type="text" id="first-name" name="first-name" placeholder="First Name">
+                                <div id="first-name-error" class="error-message"></div>
                             </div>
 
                             <div class="form-item">
-                                <label for="last-name"> Last Name</label>
+                                <label for="last-name">Last Name</label>
                                 <input type="text" id="last-name" name="last-name" placeholder="Last Name">
+                                <div id="last-name-error" class="error-message"></div>
                             </div>
 
                             <div class="form-item">
-                                <label for="email"> Email</label>
+                                <label for="email">Email</label>
                                 <input type="email" id="email" name="email" placeholder="username@gmail.com" required>
+                                <div id="email-error" class="error-message"></div>
                             </div>
                             <div class="form-item">
-                                <label for="phone number "> Phone Number</label>
-                                <input type="tel " placeholder="07******** ">
-                            </div>
-
-                            <div class="form-item">
-                                <label for=" pass ">Password</label>
-                                <input type="password " id="pass " name="pass " required>
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" placeholder="07********" id="phone">
+                                <div id="phone-error" class="error-message"></div>
                             </div>
 
                             <div class="form-item">
-                                <label for="cpassword "> Confirm Password</label>
-                                <input type="password " id="cpassword " name="password " required>
+                                <label for="pass">Password</label>
+                                <input type="password" id="pass" name="pass" required>
+                                <div id="password-error" class="error-message"></div>
                             </div>
 
+                            <div class="form-item">
+                                <label for="passwordC">Confirm Password</label>
+                                <input type="password" id="passwordC" name="password" required>
+                                <div id="passwordC-error" class="error-message"></div>
+                            </div>
 
-                            <div class="button ">
-                                <button type="submit">Create Account</button>
+                            <div class="button">
+                                <button type="submit" form="myForm">Create Account</button>
                             </div>
                         </div>
                     </form>
-                    <div class="lower-section ">
-
-                        <span>Already have an account? <a href="# ">log in</a></span>
+                    <div class="lower-section">
+                        <span>Already have an account? <a href="#">log in</a></span>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </main>
+
+            <script>
+                const pw = document.querySelector('#pass');
+                const pwC = document.querySelector('#passwordC');
+                const firstName = document.querySelector('#first-name');
+                const lastName = document.querySelector('#last-name');
+                const email = document.querySelector('#email');
+                const tel = document.querySelector('#phone');
+                const pwError = document.querySelector('#password-error');
+                const pwCError = document.querySelector('#passwordC-error');
+                const firstNameError = document.querySelector('#first-name-error');
+                const lastNameError = document.querySelector('#last-name-error');
+                const emailError = document.querySelector('#email-error');
+                const telError = document.querySelector('#phone-error');
+
+                firstName.addEventListener("input", function(event) {
+                    if (firstName.value === '') {
+                        firstNameError.textContent = 'Please type in your first name.';
+                    } else {
+                        firstNameError.textContent = '';
+                    }
+                });
+
+                lastName.addEventListener("input", function(event) {
+                    if (lastName.value === '') {
+                        lastNameError.textContent = 'Please type in your last name';
+                    } else {
+                        lastNameError.textContent = '';
+                    }
+                });
+
+                email.addEventListener("input", function(event) {
+                    if (email.validity.typeMismatch) {
+                        emailError.textContent = 'Please enter a valid email address. (e.g., johnSmith@email.com)';
+                    } else {
+                        emailError.textContent = '';
+                    }
+                });
+
+                tel.addEventListener("input", function(event) {
+                    if (tel.validity.patternMismatch) {
+                        telError.textContent = 'Please enter a 10-digit phone number';
+                    } else {
+                        telError.textContent = '';
+                    }
+                });
+
+                pw.addEventListener("input", function(event) {
+                    if (pw.validity.patternMismatch) {
+                        const currentValue = pw.value;
+                        const regExpCap = /[A-Z]/g;
+                        const regExpDig = /[0-9]/g;
+                        let result = '';
+
+                        if (!regExpCap.test(currentValue)) {
+                            result += 'Missing at least 1 capital letter. ';
+                        }
+
+                        if (!regExpDig.test(currentValue)) {
+                            result += 'Missing at least 1 number. ';
+                        }
+
+                        if (currentValue.length < 8) {
+                            result += 'Password must be at least 8 characters. ';
+                        }
+
+                        pwError.textContent = result.trim();
+                    } else {
+                        pwError.textContent = '';
+                    }
+                });
+
+                pwC.addEventListener("input", function(event) {
+                    if (pwC.value !== pw.value) {
+                        pwCError.textContent = 'Passwords do not match';
+                    } else {
+                        pwCError.textContent = '';
+                    }
+                });
+            </script>
+
 </body>
 
 </html>

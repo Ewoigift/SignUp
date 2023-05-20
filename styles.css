@@ -28,18 +28,26 @@ html, body {
     justify-content: center;
     align-items: center;
     background:  url(./images/sign-up.jpg) ;
+    filter: brightness(0.7); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
 }
 
 .credits{
     position: absolute;
+    color:#ac57ad;
     width: 100%;
     text-align: center;
     font-size: 19px;
     bottom:.5rem;
-    font-weight: bold;
+    font-weight: 600;
+}
+
+.credits a{
+    color:#ac57ad;
+    text-decoration: underline;
 }
 
 
@@ -92,7 +100,7 @@ html, body {
     justify-content: space-between;
     align-items: center;
     padding-top: 15px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .top-of-form span{
@@ -100,6 +108,12 @@ html, body {
     font-size: 1.5rem;
     color: #000;
 }
+
+.error-message {
+    color: red;
+    font-size: 14px;
+}
+
 .grid{
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -167,7 +181,7 @@ button[type='submit'] {
 }
 
 button[type='submit']:hover {
-    background: #956f5e;
+    background:  #2c754a;;
     cursor: pointer;
 }
 
@@ -185,6 +199,9 @@ button[type='submit']:hover {
     font-size: 1.2rem;
     text-decoration: underline;
     font-weight: bold;
-    color:#2c754a;
-  
+    color:#7b4231;
+}
+
+.lower-section a:hover{
+    color: #2c754a;
 }
