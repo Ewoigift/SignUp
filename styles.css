@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 *{
     margin: 0;
     padding: 0;
@@ -35,6 +36,24 @@ html, body {
 
 }
 
+.logo{
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    color: #ac57ad;
+    text-decoration: none;
+    text-align: center;
+    background: rgb(212, 209, 206,0.5);
+    padding: 10px;
+}
+
+.logo p{
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: 'Lora', serif;
+}
+
 .credits{
     position: absolute;
     color:#ac57ad;
@@ -60,8 +79,14 @@ html, body {
     flex-direction: column;
 }
 
-.contents{
+
+
+.contents2{
     padding-inline: 20px;
+    width: 100%;
+    background:#956f5e;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.342);
+
 }
 
 .toparea{
@@ -91,9 +116,7 @@ html, body {
 }
 
 .form-area{
-
     flex: 2;
-    background:#956f5e;
 }
 .top-of-form{
     display: flex;
@@ -118,14 +141,17 @@ html, body {
     display:grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 5px;
-    column-gap: 10px;
+    column-gap: 15px;
     
+}
+
+.form{
+    padding-bottom: 20px;
 }
 
 .form-item{
     display: flex;
     flex-direction: column;
-    padding-bottom: 20px;
 
 }
 
@@ -139,7 +165,7 @@ label {
 
 input {
     font-family: customFontBold;
-    padding: .8rem 1.3rem;
+    padding: .5rem 1.3rem;
     width: 100%;
     border-radius: 5px;
     border: 1px solid rgb(224, 224, 224);
@@ -188,9 +214,11 @@ button[type='submit']:hover {
 
 .lower-section{
     flex: 3;
+    padding-inline: 20px;
     font-size: 1.2rem;
     padding-top: 10px;
     margin-bottom: .5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.253);
 }
 
 .lower-section a{
@@ -200,8 +228,21 @@ button[type='submit']:hover {
     text-decoration: underline;
     font-weight: bold;
     color:#7b4231;
+    
 }
 
 .lower-section a:hover{
     color: #2c754a;
 }
+
+.copyright{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 15px;
+    font-weight: 500;
+    color:#ac57ad;
+    
+}
+
+
