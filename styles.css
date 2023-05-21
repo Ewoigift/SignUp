@@ -11,8 +11,6 @@ html, body {
     /* height: 100%; */
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
-    overflow-y: hidden;
 }
 
 
@@ -85,8 +83,7 @@ html, body {
     padding-inline: 20px;
     width: 100%;
     background:#956f5e;
-    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.342);
-
+    box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.342);
 }
 
 .toparea{
@@ -98,6 +95,7 @@ html, body {
     background:rgb(136, 142, 158,0.5);
     padding: 20px;
 }
+
 
 .top p{
     font-family: customFontBold;
@@ -161,6 +159,7 @@ label {
     font-size: 1.2rem;
     color: #000;
     padding-bottom: 5px;
+    width: 100%;
 }
 
 input {
@@ -213,12 +212,12 @@ button[type='submit']:hover {
 
 
 .lower-section{
-    flex: 3;
     padding-inline: 20px;
+    height:100%;
     font-size: 1.2rem;
     padding-top: 10px;
     margin-bottom: .5rem;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.253);
+    box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.342);
 }
 
 .lower-section a{
@@ -242,7 +241,112 @@ button[type='submit']:hover {
     font-size: 15px;
     font-weight: 500;
     color:#ac57ad;
-    
 }
 
 
+@media only screen and (max-width: 600px){
+    body{
+        overflow-x: hidden;
+    }
+    .container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .left{
+        width: 100%;
+        height: 20vh;
+    }
+
+    .right{
+        width: 100%;
+        height: 80vh;
+    }
+
+   .toparea{
+        padding: 10px;
+    }
+
+    .top p{
+        font-size: 1.3rem;
+    }
+
+    .bottom p{
+        font-size: 1.3rem;
+    }
+
+    .top-of-form{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .top-of-form span{
+        font-size: 1.3rem;
+    }
+
+    label{
+        font-size: 1.3rem;
+    }
+
+    input{
+        padding: .3rem 1rem;
+        font-size: 1rem;
+    }
+
+    .grid{
+        grid-template-columns: 1fr, 1fr;
+
+    }
+
+    .form-item{
+        margin-bottom: 5px;
+    }
+
+
+    .contents2{
+        border-radius: 15px;
+    }
+
+    .form-area .contents{
+        padding: 10px;
+    }
+
+    .lower-section{
+        padding-inline: 10px;
+        height:40%;
+        font-size: 1rem;
+    }
+
+    .lower-section a{
+        font-size: 1rem;
+    }
+
+    .credits{
+        font-size: 15px;
+    }
+
+    .logo p{
+        font-size: 2rem;
+    }
+
+    .error-message {
+        font-size: 12px;
+    }
+
+    .copyright {
+        position: relative;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+        color: #ac57ad;
+        padding-top: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+        body {
+            overflow-y: hidden;
+        }
+}
