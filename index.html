@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA+34VAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERAAAAAAEAAAAQAAAAEAEREAEAAAEAEAABABAAEAEAAAAQAQAQARERERABABAAAAAAAAEAEAAAAAAAAQAQAQEAEBABABAAEAABAAEAAQAAAAAAEAAAEAAAAAEAAAABAAAAEAAAAAAREREAAAAAAAAAAAAAD//wAA+B8AAPfvAADsNwAA29sAALftAACwDQAAv/0AAL/9AAC1rQAAu90AAN/7AADv9wAA9+8AAPgfAAD//wAA"
+        rel="icon" type="image/x-icon" />
     <title>Sign Up Form</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -84,94 +86,101 @@
                         <button type="submit" form="myForm">Create Account</button>
                     </div>
                     <span>Already have an account? <a href="#">log in</a></span>
-                    <div class="copyright">
-                        <p> Form made by ©
-                            <a href="https://ewoigiftportfolio.netlify.app/">ewoi</a> .
-                        </p>
-                    </div>
+
                 </div>
 
             </div>
+            <footer class="copyright">
 
-            <script>
-                const pw = document.querySelector('#pass');
-                const pwC = document.querySelector('#passwordC');
-                const firstName = document.querySelector('#first-name');
-                const lastName = document.querySelector('#last-name');
-                const email = document.querySelector('#email');
-                const tel = document.querySelector('#phone');
-                const pwError = document.querySelector('#password-error');
-                const pwCError = document.querySelector('#passwordC-error');
-                const firstNameError = document.querySelector('#first-name-error');
-                const lastNameError = document.querySelector('#last-name-error');
-                const emailError = document.querySelector('#email-error');
-                const telError = document.querySelector('#phone-error');
+                <p> Form made by ©
+                    <a href="https://ewoigiftportfolio.netlify.app/">ewoi</a> .
+                </p>
 
-                firstName.addEventListener("input", function(event) {
-                    if (firstName.value === '') {
-                        firstNameError.textContent = 'Please type in your first name.';
-                    } else {
-                        firstNameError.textContent = '';
-                    }
-                });
+            </footer>
+        </div>
 
-                lastName.addEventListener("input", function(event) {
-                    if (lastName.value === '') {
-                        lastNameError.textContent = 'Please type in your last name';
-                    } else {
-                        lastNameError.textContent = '';
-                    }
-                });
+    </main>
 
-                email.addEventListener("input", function(event) {
-                    if (email.validity.typeMismatch) {
-                        emailError.textContent = 'Please enter a valid email address. (e.g., johnSmith@email.com)';
-                    } else {
-                        emailError.textContent = '';
-                    }
-                });
 
-                tel.addEventListener("input", function(event) {
-                    if (tel.validity.patternMismatch) {
-                        telError.textContent = 'Please enter a 10-digit phone number';
-                    } else {
-                        telError.textContent = '';
-                    }
-                });
+    <script>
+        const pw = document.querySelector('#pass');
+        const pwC = document.querySelector('#passwordC');
+        const firstName = document.querySelector('#first-name');
+        const lastName = document.querySelector('#last-name');
+        const email = document.querySelector('#email');
+        const tel = document.querySelector('#phone');
+        const pwError = document.querySelector('#password-error');
+        const pwCError = document.querySelector('#passwordC-error');
+        const firstNameError = document.querySelector('#first-name-error');
+        const lastNameError = document.querySelector('#last-name-error');
+        const emailError = document.querySelector('#email-error');
+        const telError = document.querySelector('#phone-error');
 
-                pw.addEventListener("input", function(event) {
-                    if (pw.validity.patternMismatch) {
-                        const currentValue = pw.value;
-                        const regExpCap = /[A-Z]/g;
-                        const regExpDig = /[0-9]/g;
-                        let result = '';
+        firstName.addEventListener("input", function(event) {
+            if (firstName.value === '') {
+                firstNameError.textContent = 'Please type in your first name.';
+            } else {
+                firstNameError.textContent = '';
+            }
+        });
 
-                        if (!regExpCap.test(currentValue)) {
-                            result += 'Missing at least 1 capital letter. ';
-                        }
+        lastName.addEventListener("input", function(event) {
+            if (lastName.value === '') {
+                lastNameError.textContent = 'Please type in your last name';
+            } else {
+                lastNameError.textContent = '';
+            }
+        });
 
-                        if (!regExpDig.test(currentValue)) {
-                            result += 'Missing at least 1 number. ';
-                        }
+        email.addEventListener("input", function(event) {
+            if (email.validity.typeMismatch) {
+                emailError.textContent = 'Please enter a valid email address. (e.g., johnSmith@email.com)';
+            } else {
+                emailError.textContent = '';
+            }
+        });
 
-                        if (currentValue.length < 8) {
-                            result += 'Password must be at least 8 characters. ';
-                        }
+        tel.addEventListener("input", function(event) {
+            if (tel.validity.patternMismatch) {
+                telError.textContent = 'Please enter a 10-digit phone number';
+            } else {
+                telError.textContent = '';
+            }
+        });
 
-                        pwError.textContent = result.trim();
-                    } else {
-                        pwError.textContent = '';
-                    }
-                });
+        pw.addEventListener("input", function(event) {
+            if (pw.validity.patternMismatch) {
+                const currentValue = pw.value;
+                const regExpCap = /[A-Z]/g;
+                const regExpDig = /[0-9]/g;
+                let result = '';
 
-                pwC.addEventListener("input", function(event) {
-                    if (pwC.value !== pw.value) {
-                        pwCError.textContent = 'Passwords do not match';
-                    } else {
-                        pwCError.textContent = '';
-                    }
-                });
-            </script>
+                if (!regExpCap.test(currentValue)) {
+                    result += 'Missing at least 1 capital letter. ';
+                }
+
+                if (!regExpDig.test(currentValue)) {
+                    result += 'Missing at least 1 number. ';
+                }
+
+                if (currentValue.length < 8) {
+                    result += 'Password must be at least 8 characters. ';
+                }
+
+                pwError.textContent = result.trim();
+            } else {
+                pwError.textContent = '';
+            }
+        });
+
+        pwC.addEventListener("input", function(event) {
+            if (pwC.value !== pw.value) {
+                pwCError.textContent = 'Passwords do not match';
+            } else {
+                pwCError.textContent = '';
+            }
+        });
+    </script>
 
 </body>
 
