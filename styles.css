@@ -114,7 +114,7 @@ html, body {
 }
 
 .form-area{
-    flex: 2;
+    flex:auto;
 }
 .top-of-form{
     display: flex;
@@ -212,6 +212,7 @@ button[type='submit']:hover {
 
 
 .lower-section{
+    flex: auto;
     padding-inline: 20px;
     height:100%;
     font-size: 1.2rem;
